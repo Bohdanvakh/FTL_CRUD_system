@@ -27,6 +27,12 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+# Use Devise for new users registarion [https://github.com/heartcombo/devise]
+gem 'devise', '~> 4.9', '>= 4.9.3'
+
+# Use gem tailwindcss-rails for providing styles [https://github.com/rails/tailwindcss-rails]
+gem 'tailwindcss-rails', '~> 2.0', '>= 2.0.31'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -69,4 +75,12 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 
+  # Use Rspec for testing [https://github.com/rspec/rspec-metagem]
+  gem 'rspec', '~> 3.12'
+
+  # Use Faker for generate fake data [https://github.com/faker-ruby/faker]
+  gem 'faker', '~> 3.2', '>= 3.2.1'
+
+  # Use Factory_bot for creating objects in your test env [https://github.com/thoughtbot/factory_bot]
+  gem 'factory_bot', '~> 6.3'
 end
