@@ -1,0 +1,9 @@
+<h1 class="text-center mt-5 mb-5">Edit Spendings</h1>
+
+<div class="w-50 mx-auto">
+    <%= render 'spendings/partials/edit_form', spending: @spending %>
+
+    <div class="d-flex gap-3 mb-5 mt-4">
+        <%= link_to "Back to spendings", root_path, class:"btn btn-outline-primary mx-auto" %>
+    </div>
+</div>
