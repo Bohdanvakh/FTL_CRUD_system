@@ -33,6 +33,9 @@ gem 'devise', '~> 4.9', '>= 4.9.3'
 # Use gem tailwindcss-rails for providing styles [https://github.com/rails/tailwindcss-rails]
 gem 'tailwindcss-rails', '~> 2.0', '>= 2.0.31'
 
+# Use pry-rails for debugging application []
+gem 'pry-rails', '~> 0.3.4'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
