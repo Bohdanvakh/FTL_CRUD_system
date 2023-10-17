@@ -12,7 +12,7 @@ class SpendingsController < ApplicationController
     if @spending.save
       redirect_to root_path, notice: 'Spending was successfully created'
     else
-      flash.now[:alert] = 'Spending was not created'
+      redirect_to root_path, alert: 'Spending was not created'
     end
   end
 

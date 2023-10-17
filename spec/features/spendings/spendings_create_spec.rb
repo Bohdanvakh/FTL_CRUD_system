@@ -22,4 +22,18 @@ RSpec.feature 'Spendings create' do
 
     expect(page).to have_text('Spending was successfully created')
   end
+
+  scenario 'allows a user to see alert that spending was not created' do
+    @category =  FactoryBot.create(:category, name: 'Traveling')
+
+    visit root_path
+
+    expect(page).to have_content('Total amount')
+
+    fill_in 'amount', with: 100
+    fill_in 'description', with: 'Lorem ipsum dolor sit amet'
+    click_button 'Add Spending'
+
+    expect(page).to have_text('Spending was not created')
+  end
 end
