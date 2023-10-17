@@ -17,7 +17,7 @@ RSpec.feature 'Spendings create' do
 
     fill_in 'amount', with: 100
     fill_in 'description', with: 'Lorem ipsum dolor sit amet'
-    select @category.name, from: 'category_id'
+    select @category.name, from: 'category'
     click_button 'Add Spending'
 
     expect(page).to have_text('Spending was successfully created')
