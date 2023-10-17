@@ -22,6 +22,7 @@
 
         <div class="d-flex flex-column col-4">
             <%= render 'spendings/partials/form', categories: @categories %>
+            <%= button_to "Sign_out", destroy_user_session_path, method: :delete, class:"btn btn-danger mt-5 pt-3 pb-3 w-100" %>
         </div>
     </div>
 </div>

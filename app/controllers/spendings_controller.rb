@@ -43,7 +43,6 @@ class SpendingsController < ApplicationController
   private
 
   def spending_params
-    binding.pry
     params.require(:spending).permit(:amount, :description, :user_id, :category_id)
   end
 end

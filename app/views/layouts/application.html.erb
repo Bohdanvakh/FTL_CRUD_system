@@ -14,6 +14,14 @@
   </head>
 
   <body>
+    <% if notice %>
+      <p class="alert alert-success mt-5 w-25 mx-auto mt-3"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger w-25 mx-auto mt-3"><%= alert %></p>
+    <% end %>
+
     <%= yield %>
+
   </body>
 </html>
