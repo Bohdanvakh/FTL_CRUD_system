@@ -1,5 +1,6 @@
 class SpendingsController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
+  before_action :find_spending, only: [:show, :edit, :update, :destroy]
 
   def new
     @spending = Spending.new
@@ -16,16 +17,13 @@ class SpendingsController < ApplicationController
   end
 
   def show
-    @spending = Spending.find(params[:id])
   end
 
   def edit
-    @spending = Spending.find(params[:id])
     @categories = Category.all
   end
 
   def update
-    @spending = Spending.find(params[:id])
     if @spending.update(spending_params)
       redirect_to :root
     else
@@ -34,13 +32,16 @@ class SpendingsController < ApplicationController
   end
 
   def destroy
-    @spending = Spending.find(params[:id])
     @spending.destroy
 
     redirect_to :root
   end
 
   private
+
+  def find_spending
+    @spending = Spending.find(params[:id])
+  end
 
   def spending_params
     params.require(:spending).permit(:amount, :description, :user_id, :category_id)
