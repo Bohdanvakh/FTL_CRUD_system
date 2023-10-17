@@ -60,6 +60,12 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+
+  # Use Rspec for testing [https://rubygems.org/gems/rspec-rails]
+  gem 'rspec-rails', '~> 6.0', '>= 6.0.3'
+
+  # Use factory_bot_rails for creating objects in your test env [https://github.com/thoughtbot/factory_bot_rails]
+  gem 'factory_bot_rails', '~> 6.2'
 end
 
 group :development do
@@ -78,12 +84,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 
-  # Use Rspec for testing [https://github.com/rspec/rspec-metagem]
-  gem 'rspec', '~> 3.12'
-
   # Use Faker for generate fake data [https://github.com/faker-ruby/faker]
   gem 'faker', '~> 3.2', '>= 3.2.1'
-
-  # Use Factory_bot for creating objects in your test env [https://github.com/thoughtbot/factory_bot]
-  gem 'factory_bot', '~> 6.3'
 end
