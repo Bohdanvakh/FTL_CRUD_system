@@ -10,11 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_15_201334) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_18_183057) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "shares", force: :cascade do |t|
+    t.integer "author_id"
+    t.integer "recipient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_shares_on_author_id"
+    t.index ["recipient_id"], name: "index_shares_on_recipient_id"
   end
 
   create_table "spendings", force: :cascade do |t|
@@ -42,4 +51,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_15_201334) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "shares", "users", column: "author_id"
+  add_foreign_key "shares", "users", column: "recipient_id"
 end
