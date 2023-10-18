@@ -3,6 +3,7 @@ require "rails_helper"
 RSpec.describe 'Spending', type: :request do
   let(:user) { create(:user) }
   let(:category) { create(:category) }
+  let(:category_clothing) { create(:category, name: 'Clothing') }
 
   before do
     post user_session_path, params: { user: { email: user.email, password: user.password } }
@@ -51,6 +52,37 @@ RSpec.describe 'Spending', type: :request do
 
       expect {delete "/spendings/#{@spending.id}"}.to change(Spending, :count).by(-1)
       expect(Spending.find_by(id: @spending.id)).to be_nil
+    end
+  end
+
+  describe 'allow a user to filter spendings' do
+    before do
+      @spending = FactoryBot.create(:spending, user: user, category: category)
+      @spending_clothing = FactoryBot.create(:spending, user: user, category: category_clothing)
+    end
+
+    it 'filter a spendings by category' do
+      get "/spendings?by_category=#{category_clothing.id}"
+
+      expect(response).to have_http_status(:success)
+    end
+
+    it 'filter a spendings by amount' do
+      min_value = 10
+      max_value = 100
+
+      get "/spendings?&by_amount%5Bmin%5D=#{min_value}&by_amount%5Bmax%5D=#{max_value}"
+
+      expect(response).to have_http_status(:success)
+    end
+
+    it 'filter a spendings by amount and category' do
+      min_value = 10
+      max_value = 100
+
+      get "/spendings?by_category=#{category_clothing.id}?&by_amount%5Bmin%5D=#{min_value}&by_amount%5Bmax%5D=#{max_value}"
+
+      expect(response).to have_http_status(:success)
     end
   end
 end
