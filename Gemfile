@@ -33,6 +33,9 @@ gem 'devise', '~> 4.9', '>= 4.9.3'
 # Use gem tailwindcss-rails for providing styles [https://github.com/rails/tailwindcss-rails]
 gem 'tailwindcss-rails', '~> 2.0', '>= 2.0.31'
 
+# Use ahs_scope for providing filtration of the list [https://github.com/heartcombo/has_scope]
+gem 'has_scope', '~> 0.8.2'
+
 # Use pry-rails for debugging application []
 gem 'pry-rails', '~> 0.3.4'
 

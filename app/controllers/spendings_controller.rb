@@ -2,6 +2,13 @@ class SpendingsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_spending, only: [:show, :edit, :update, :destroy]
 
+  has_scope :by_category
+  has_scope :by_amount, using: %i[min max], type: :hash
+
+  def index
+    @user_spendings = apply_scopes(Spending).includes(:category).all
+  end
+
   def new
     @spending = Spending.new
     @categories = Category.all

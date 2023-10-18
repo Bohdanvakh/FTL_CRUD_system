@@ -2,15 +2,18 @@
     <h1 class="mt-5 mb-5">List of spendings</h1>
     <div class="d-flex row">
         <div class="d-flex flex-column col-8">
+            <div>
+                <%= render 'partials/filters', path: root_path %>
+            </div>
 
             <h5 class="bg-secondary-subtle rounded p-2 mb-4">Total amount: $<%= total_spending_amount(current_user) %></h5>
 
             <% @user_spendings.each do |spending| %>
                 <div class="mt-1 mb-1 p-3 rounded bg-light d-flex justify-content-between">
                     <div>
-                        <p class="fs-5">Amount: $<%= spending.amount %></p>
-                        <p>Description: <%= spending.description %></p>
-                        <p>Category: <%= spending.category.name %></p>
+                        <p class="fs-5">Amount: $<%= spending&.amount %></p>
+                        <p>Description: <%= spending&.description %></p>
+                        <p>Category: <%= spending&.category.name %></p>
                     </div>
                     <div class="float-end">
                         <%= link_to "Edit", edit_spending_path(spending), class:"btn mb-2 btn-secondary w-100" %>
