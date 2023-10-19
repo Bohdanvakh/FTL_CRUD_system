@@ -33,9 +33,6 @@ gem "jbuilder"
 # Use Devise for new users registarion [https://github.com/heartcombo/devise]
 gem 'devise', '~> 4.9', '>= 4.9.3'
 
-# Use gem tailwindcss-rails for providing styles [https://github.com/rails/tailwindcss-rails]
-gem 'tailwindcss-rails', '~> 2.0', '>= 2.0.31'
-
 # Use ahs_scope for providing filtration of the list [https://github.com/heartcombo/has_scope]
 gem 'has_scope', '~> 0.8.2'
 
@@ -44,6 +41,7 @@ gem 'pry-rails', '~> 0.3.4'
 
 # Use dotenv for loading environment variables from `.env` [https://github.com/bkeepers/dotenv]
 gem 'dotenv', '~> 2.8', '>= 2.8.1'
+gem 'dotenv-rails', '~> 2.8', '>= 2.8.1'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

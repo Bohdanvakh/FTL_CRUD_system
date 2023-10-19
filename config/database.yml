@@ -5,12 +5,17 @@
 #   gem "sqlite3"
 #
 default: &default
-  # pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  adapter: postgresql
+  # encoding: <%= ENV.fetch('DB_ENCODING') { 'WIN1251' } %>
+  host : <%= ENV.fetch('DB_HOST', 'localhost') %>
+  pool: <%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>
+  port: <%= ENV.fetch('DB_PORT', '5432')%>
+  username: <%= ENV.fetch('DB_USERNAME', 'Bohdan') %>
+  password: <%= ENV.fetch('DB_PASSWORD', 'postgres') %>
 
 development:
   <<: *default
   database: <%= ENV.fetch('DB_NAME', 'ftl_development') %>
-  # database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -18,9 +23,7 @@ development:
 test:
   <<: *default
   database: <%= ENV.fetch('DB_NAME', 'ftl_test') %>
-  database: db/test.sqlite3
 
 production:
   <<: *default
   database: <%= ENV.fetch('DB_NAME', 'ftl_production') %>
-  database: db/production.sqlite3

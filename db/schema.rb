@@ -13,6 +13,7 @@
 ActiveRecord::Schema[7.0].define(version: 2023_10_18_183057) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "repmgr"
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
