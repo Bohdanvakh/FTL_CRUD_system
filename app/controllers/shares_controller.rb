@@ -1,6 +1,11 @@
 class SharesController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @shared_lists = current_user.recipients
+    @shared_spendings = Spending.includes(:category, :user).where(user_id: @shared_lists.pluck(:author_id))
+  end
+
   def new
     @share = Share.new
   end
@@ -16,11 +21,6 @@ class SharesController < ApplicationController
     else
       redirect_to root_path, alert: 'Share could not be created'
     end
-  end
-
-  def index
-    @shared_lists = current_user.recipients
-    @shared_spendings = Spending.includes(:category, :user).where(user_id: @shared_lists.pluck(:author_id))
   end
 
   private
