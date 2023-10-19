@@ -1,4 +1,4 @@
-<%= form_with(model: @spending, url: spending_path(@spending), data: { turbo: false }, class: "d-flex flex-column") do |f| %>
+<%= form_with(model: spending, url: path, data: { turbo: false }, class: "d-flex flex-column") do |f| %>
     <div class="">
         <p><%= f.label :amount %>*</p>
         <%= f.text_field :amount, class: "form-control", id: "amount" %>
@@ -16,5 +16,5 @@
         <%= f.collection_select :category_id, @categories, :id, :name, {prompt: "Select web users"}, { class: "form-select", id: "category" } %>
     </div>
 
-    <%= f.submit "Edit Spending", class: "mt-4 btn btn-primary w-100" %>
+    <%= f.submit button_text, class: "mt-4 btn btn-primary w-100" %>
 <% end %>
