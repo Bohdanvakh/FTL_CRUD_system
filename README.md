@@ -6,18 +6,6 @@
 | Back-end web framework | Ruby on Rails | 7.0.8 |
 | Database | SQLite3 | 1.4 |
 
-* Ruby version: `3.1.3`
-
-* Ruby on Rails version: `7.0.6`
-
-* PostgreSQL version: `15.3`
-
-* Database creation
-* System dependencies: PostgreSQL
-
-* ...
-
-
 ## FTL Test Task Application
 
 How to run a project locally?
