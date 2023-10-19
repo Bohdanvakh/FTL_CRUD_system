@@ -10,7 +10,10 @@ gem "rails", "~> 7.0.8"
 gem "sprockets-rails"
 
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+# gem "sqlite3", "~> 1.4"
+
+# Use pg as a database for Active Record [https://github.com/ged/ruby-pg]
+gem 'pg', '~> 1.5', '>= 1.5.4'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -38,6 +41,9 @@ gem 'has_scope', '~> 0.8.2'
 
 # Use pry-rails for debugging application []
 gem 'pry-rails', '~> 0.3.4'
+
+# Use dotenv for loading environment variables from `.env` [https://github.com/bkeepers/dotenv]
+gem 'dotenv', '~> 2.8', '>= 2.8.1'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
