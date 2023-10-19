@@ -1,0 +1,12 @@
+<%= form_with(model: Share.new, url: shares_path, data: { turbo: false }, class: "d-flex flex-column") do |f| %>
+    <div class="d-flex justify-content-between mb-3 p-3 form-group">
+        <div class="d-flex flex-column form-group">
+            <%= f.hidden_field :author_id, value: current_user.id %>
+        </div>
+        <div class="mt-4">
+            <p><%= f.label :recipient_id %></p>
+            <%= f.text_field :recipient_id %>
+        </div>
+        <%= f.submit "Share list", class: "btn btn-primary w-25" %>
+    </div>
+<% end %>

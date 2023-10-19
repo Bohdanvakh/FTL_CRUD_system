@@ -1,0 +1,14 @@
+<h1 class="text-center mt-5 mb-3">Shares</h1>
+
+ <div class="d-flex flex-column container">
+    <% @shared_spendings.group_by(&:user).each do |user, spendings| %>
+        <p class="fw-bolder">User: <%= user.email %></p>
+        <% spendings.each do |spending| %>
+        <div class="list-group-item mb-3 bg-body-tertiary p-3 rounded">
+            <h3><%= spending&.amount %></h3>
+            <p><%= spending&.description %></p>
+            <p><%= spending&.category.name %></p>
+        </div>
+        <% end %>
+    <% end %>
+</div>
