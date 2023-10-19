@@ -8,6 +8,11 @@
 
             <h5 class="bg-secondary-subtle rounded p-2 mb-4">Total amount: $<%= total_spending_amount(current_user) %></h5>
 
+            <div>
+                <h4 class="mt-3 mb-3">Share your list of spendings with:</h4>
+                <%= render 'partials/shares_form' %>
+            </div>
+
             <% @user_spendings.each do |spending| %>
                 <div class="mt-1 mb-1 p-3 rounded bg-light d-flex justify-content-between">
                     <div>
