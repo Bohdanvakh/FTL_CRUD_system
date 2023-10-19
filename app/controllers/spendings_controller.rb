@@ -2,11 +2,12 @@ class SpendingsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_spending, only: [:show, :edit, :update, :destroy]
 
+  has_scope :for_user
   has_scope :by_category
   has_scope :by_amount, using: %i[min max], type: :hash
 
   def index
-    @user_spendings = apply_scopes(Spending).includes(:category).all
+    @user_spendings = apply_scopes(Spending.for_user(current_user)).includes(:category).all
   end
 
   def new
@@ -31,17 +32,24 @@ class SpendingsController < ApplicationController
   end
 
   def update
-    if @spending.update(spending_params)
-      redirect_to :root
+    if current_user == @spending.user
+      if @spending.update(spending_params)
+        redirect_to :root
+      else
+        render :edit
+      end
     else
-      render :edit
+      redirect_to :root, alert: "You don't have permission to edit this spending."
     end
   end
 
   def destroy
-    @spending.destroy
-
-    redirect_to :root
+    if current_user == @spending.user
+      @spending.destroy
+      redirect_to :root
+    else
+      redirect_to :root, alert: "You don't have permission to delete this spending."
+    end
   end
 
   private
