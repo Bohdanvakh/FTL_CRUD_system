@@ -20,6 +20,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_18_183057) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "data_migrations", primary_key: "version", id: :string, force: :cascade do |t|
+  end
+
   create_table "shares", force: :cascade do |t|
     t.bigint "author_id"
     t.bigint "recipient_id"
