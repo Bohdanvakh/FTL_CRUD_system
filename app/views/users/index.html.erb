@@ -1,36 +1,36 @@
 <div class="container">
-    <h1 class="mt-5 mb-5">List of spendings</h1>
+    <h1 class="mt-5 mb-5"><%= I18n.t("users.title") %></h1>
     <div class="d-flex row">
         <div class="d-flex flex-column col-8">
             <div>
                 <%= render 'partials/filters', path: root_path %>
             </div>
 
-            <h5 class="bg-secondary-subtle rounded p-2 mb-4">Total amount: $<%= total_spending_amount(current_user) %></h5>
+            <h5 class="bg-secondary-subtle rounded p-2 mb-4"><%= I18n.t("users.total") %><%= total_spending_amount(current_user) %></h5>
 
             <div>
-                <h4 class="mt-3 mb-3">Share your list of spendings with:</h4>
+                <h4 class="mt-3 mb-3"><%= I18n.t("users.share_with") %></h4>
                 <%= render 'partials/shares_form' %>
             </div>
 
             <% @user_spendings.each do |spending| %>
                 <div class="mt-1 mb-1 p-3 rounded bg-light d-flex justify-content-between">
                     <div>
-                        <p class="fs-5">Amount: $<%= spending&.amount %></p>
-                        <p>Description: <%= spending&.description %></p>
-                        <p>Category: <%= spending&.category.name %></p>
+                        <p class="fs-5"><%= I18n.t("spendings.amount") %><%= spending&.amount %></p>
+                        <p><%= I18n.t("spendings.description") %><%= spending&.description %></p>
+                        <p><%= I18n.t("spendigns.category") %><%= spending&.category.name %></p>
                     </div>
                     <div class="float-end">
-                        <%= link_to "Edit", edit_spending_path(spending), class:"btn mb-2 btn-secondary w-100" %>
-                        <%= button_to 'Delete', spending, method: :delete, data: { turbo_confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+                        <%= link_to I18n.t("btns.edit"), edit_spending_path(spending), class:"btn mb-2 btn-secondary w-100" %>
+                        <%= button_to I18n.t("btns.delete"), spending, method: :delete, data: { turbo_confirm: 'Are you sure?' }, class:"btn btn-danger" %>
                     </div>
                 </div>
             <% end %>
         </div>
 
         <div class="d-flex flex-column col-4">
-            <%= render 'partials/form', spending: Spending.new, button_text: "Add Spending", path: spendings_path %>
-            <%= button_to "Sign out", destroy_user_session_path, method: :delete, class:"btn btn-danger mt-5 pt-3 pb-3 w-100" %>
+            <%= render 'partials/form', spending: Spending.new, button_text: t("spendings.add_spending"), path: spendings_path %>
+            <%= button_to I18n.t("btns.sign_out"), destroy_user_session_path, method: :delete, class:"btn btn-danger mt-5 pt-3 pb-3 w-100" %>
         </div>
     </div>
 </div>

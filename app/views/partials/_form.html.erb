@@ -13,7 +13,7 @@
 
     <div class="mt-4">
         <p><%= f.label :category %></p>
-        <%= f.collection_select :category_id, @categories, :id, :name, {prompt: "Select web users"}, { class: "form-select", id: "category" } %>
+        <%= f.collection_select :category_id, @categories, :id, :name, {prompt: I18n.t("forms.select")}, { class: "form-select", id: "category" } %>
     </div>
 
     <%= f.submit button_text, class: "mt-4 btn btn-primary w-100" %>

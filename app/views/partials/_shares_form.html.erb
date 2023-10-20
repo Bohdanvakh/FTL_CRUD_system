@@ -7,6 +7,6 @@
             <p><%= f.label 'share with' %></p>
             <%= f.text_field :recipient_id, placeholder: "@example.com", id: 'recipient_id', class: "form-control" %>
         </div>
-        <%= f.submit "Share list", class: "btn btn-primary w-25 pt-3 pb-3" %>
+        <%= f.submit I18n.t("btns.share"), class: "btn btn-primary w-25 pt-3 pb-3" %>
     </div>
 <% end %>

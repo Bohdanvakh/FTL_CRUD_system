@@ -1,16 +1,16 @@
 <div class="container">
-    <h1 class="mt-5 mb-5">spending</h1>
+    <h1 class="mt-5 mb-5"><%= I18n.t("spendings.title_show") %></h1>
     <div class="d-flex row">
         <div class="d-flex flex-column col-8">
             <div class="mt-1 mb-1 p-3 rounded bg-light d-flex justify-content-between">
                 <div>
-                    <p class="fs-5">Amount: $<%= @spending.amount %></p>
-                    <p>Description: <%= @spending.description %></p>
-                    <p>Category: <%= @spending.category.name %></p>
+                    <p class="fs-5"><%= I18n.t("spendings.amount") %><%= @spending.amount %></p>
+                    <p><%= I18n.t("spendings.description") %><%= @spending.description %></p>
+                    <p><%= I18n.t("spendings.category") %><%= @spending.category.name %></p>
                 </div>
                 <div class="float-end">
-                    <%= link_to "Edit", edit_spending_path(@spending), class:"btn mb-2 btn-secondary w-100" %>
-                    <%= button_to 'Delete', @spending, method: :delete, data: { turbo_confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+                    <%= link_to I18n.t("btns.edit"), edit_spending_path(@spending), class:"btn mb-2 btn-secondary w-100" %>
+                    <%= button_to I18n.t("btns.delete"), @spending, method: :delete, data: { turbo_confirm: 'Are you sure?' }, class:"btn btn-danger" %>
                 </div>
             </div>
         </div>
