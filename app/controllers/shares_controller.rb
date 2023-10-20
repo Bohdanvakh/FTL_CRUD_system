@@ -17,9 +17,9 @@ class SharesController < ApplicationController
     @share.recipient_id = recipient_id if recipient_id
 
     if @share.save
-      redirect_to root_path, notice: 'Share was successfully created'
+      redirect_to root_path, notice: I18n.t('shares.success')
     else
-      redirect_to root_path, alert: 'Share could not be created'
+      redirect_to root_path, alert: I18n.t('shares.error')
     end
   end
 

@@ -1,6 +1,6 @@
 <div class="container d-flex flex-column">
   <div class="w-25 mx-auto">
-    <h2 class="text-center mt-5">Sign up</h2>
+    <h2 class="text-center mt-5"><%= I18n.t("sign_up")%></h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
@@ -24,7 +24,7 @@
       </div>
 
       <div class="actions d-flex">
-        <%= f.submit "Sign up", class: "btn btn-primary w-100" %>
+        <%= f.submit I18n.t("btns.sign_up"), class: "btn btn-primary w-100" %>
       </div>
     <% end %>
 

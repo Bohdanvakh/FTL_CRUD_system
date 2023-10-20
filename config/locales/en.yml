@@ -30,4 +30,42 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  sign_up: "Sign up"
+  log_in: "Log in"
+  cancel: "Cancel my account"
   hello: "Hello world"
+  shares:
+    title: "Shares"
+    user: "User: "
+    success: "Share was successfully created"
+    error: "Share could not be created"
+  spendings:
+    title_edit: "Edit Spendings"
+    title_new: "New Spending"
+    title_show: "spending"
+    success: "Spending was successfully created"
+    error: "Spending was not created"
+    edit: "You don't have permission to edit this spending."
+    delete: "You don't have permission to delete this spending."
+    amount: "Amount: $"
+    description: "Description:"
+    category: "Category:"
+    add_spending: "Add Spending"
+  btns:
+    filter: "Filter"
+    share: "Share list"
+    back_to_spendings: "Back to spendings"
+    edit: "Edit"
+    delete: "Delete"
+    sign_out: "Sign out"
+    sign_up: "Sign up"
+    update: "Update"
+    back: "Back"
+    cancel: "Cancel my account"
+  forms:
+    select: "Select web users"
+  users:
+    title: "List of spendings"
+    total: "Total amount: $"
+    share_with: "Share your list of spendings with:"
+  turbolink: "Are you sure?"

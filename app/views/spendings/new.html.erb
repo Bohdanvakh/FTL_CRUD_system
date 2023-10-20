@@ -1,4 +1,4 @@
-<h1 class="text-center mt-5 mb-5">New Spending</h1>
+<h1 class="text-center mt-5 mb-5"><%= I18n.t("spendings.title_new") %></h1>
 <div class="d-flex flex-column col-4 mx-auto">
-    <%= render 'spendings/partials/form', categories: @categories %>
+    <%= render 'partials/form', categories: @categories, spending: Spending.new, path: spendings_path, button_text: t("spendings.add_spending") %>
 </div>

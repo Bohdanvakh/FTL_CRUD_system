@@ -18,9 +18,9 @@ class SpendingsController < ApplicationController
   def create
     @spending = Spending.new(spending_params)
     if @spending.save
-      redirect_to root_path, notice: 'Spending was successfully created'
+      redirect_to root_path, notice: I18n.t('spendings.success')
     else
-      redirect_to root_path, alert: 'Spending was not created'
+      redirect_to root_path, alert: I18n.t('spendings.error')
     end
   end
 
@@ -39,7 +39,7 @@ class SpendingsController < ApplicationController
         render :edit
       end
     else
-      redirect_to :root, alert: "You don't have permission to edit this spending."
+      redirect_to :root, alert: I18n.t('spendings.edit')
     end
   end
 
@@ -48,7 +48,7 @@ class SpendingsController < ApplicationController
       @spending.destroy
       redirect_to :root
     else
-      redirect_to :root, alert: "You don't have permission to delete this spending."
+      redirect_to :root, alert: I18n.t('spendings.delete')
     end
   end
 

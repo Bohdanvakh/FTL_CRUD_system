@@ -1,9 +1,9 @@
-<h1 class="text-center mt-5 mb-5">Edit Spendings</h1>
+<h1 class="text-center mt-5 mb-5"><%= I18n.t("spendings.title_edit") %></h1>
 
 <div class="w-50 mx-auto">
     <%= render 'partials/form', spending: @spending, button_text: "Edit Spending", path: spending_path(@spending) %>
 
     <div class="d-flex gap-3 mb-5 mt-4">
-        <%= link_to "Back to spendings", root_path, class:"btn btn-outline-primary mx-auto" %>
+        <%= link_to I18n.t("btns.back_to_spendings"), root_path, class:"btn btn-outline-primary mx-auto" %>
     </div>
 </div>
