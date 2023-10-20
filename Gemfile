@@ -24,6 +24,8 @@ gem "importmap-rails"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
+gem 'data_migrate', '~> 9.2'
+
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
@@ -94,3 +96,9 @@ group :test do
   # Use Faker for generate fake data [https://github.com/faker-ruby/faker]
   gem 'faker', '~> 3.2', '>= 3.2.1'
 end
+
+gem "dockerfile-rails", ">= 1.5", :group => :development
+
+gem "sentry-ruby", "~> 5.12"
+
+gem "sentry-rails", "~> 5.12"
