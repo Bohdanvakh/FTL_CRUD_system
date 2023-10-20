@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :spendings
-  resources :shares
+  resources :shares, only: [:index, :new, :create]
 
   root to: 'users#index'
 
