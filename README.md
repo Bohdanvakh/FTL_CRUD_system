@@ -6,9 +6,6 @@
 | Back-end web framework | Ruby on Rails | 7.0.8 |
 | Database | SQLite3 | 1.4 |
 
-## Project
-https://ftl-test-task.fly.dev/
-
 ## FTL Test Task Application
 
 How to run a project locally?
